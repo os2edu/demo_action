@@ -6,6 +6,8 @@ const message = {
   repoURL: getInput("repoURL")
 }
 
+console.log(process.env)
+
 const jsonFile = `${message.repoOwner}_test.json`
 
 await fs.writeFile(jsonFile, JSON.stringify(message))
