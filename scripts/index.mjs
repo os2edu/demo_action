@@ -1,4 +1,4 @@
-import * as fs from "promise/fs"
+import * as fs from "fs/promises"
 import { getInput } from "@actions/core"
 
 const message = {
