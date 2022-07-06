@@ -15,8 +15,16 @@ message.repoName = repoName
 
 message.commitTime = dayjs().format("YYYY-MM-DD HH:mm:ss")
 
-console.log(process.env)
+// console.log(process.env)
+
+const res = repoName?.replace(/.*\/(.*?)\-.*/g, "$1")
+
+message.assignment = {
+  title: res,
+  description: res
+}
 console.log(message)
+
 const jsonFile = `${message.repoOwner}_test.json`
 
 await fs.writeFile(jsonFile, JSON.stringify(message))
